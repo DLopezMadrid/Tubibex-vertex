@@ -1,0 +1,36 @@
+    double myx[3][3]={
+        {-2, 2 , 0.05} ,                 //x[0] min, max, epsilon
+        {-1, 1, 0.05} ,                 //x[1] min, max, epsilon
+        {-0.15, 0.15, 0.015}
+    };
+
+
+10000 unsafe boxes
+
+function f(x[3],t) 
+         xd = 7*t; 
+        xdd = 7; 
+         yd = sin(0.1*t);
+         ydd = 0.1*cos(0.1*t);
+         xdiff = (xd-x[0]+xdd);
+         ydiff = (yd-x[1]+ydd);
+         norm =  ( sqrt((xdiff)^2 +(ydiff)^2) );
+         return(
+                 norm*cos(x[2]),
+             norm*sin(x[2]),
+             10*(cos(x[2])*(ydiff)-sin(x[2])*(xdiff))/norm
+         );
+     end
+
+function g(x[3],t)
+                xd=7*t; 
+                xdd=7; 
+                yd=sin(0.1*t); 
+                ydd=0.1*cos(0.1*t); 
+                xdiff=(xd-x[0]+xdd);
+                ydiff=(yd-x[1]+ydd);
+                den=sqrt(xdiff^2+ydiff^2);
+                return(((x[0]-xd)^2+(x[1]-yd)^2-1),
+             ((cos(x[2])-xdiff/den)^2+(sin(x[2])-ydiff/den)^2 ) - 0.2 
+                       );
+end
