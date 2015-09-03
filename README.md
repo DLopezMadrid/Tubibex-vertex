@@ -1,6 +1,8 @@
 # TUBIBEX v1.2 + VERTEX 
 ### Developed by Daniel Lopez Madrid
 
+Original tubibex: https://github.com/DLopezMadrid/Tubibex
+
 Tubibex is an algorithm for calculating capture tubes based on the ibex library
 
 My MSc in Advanced Control and Systems engineering is in the doc folder:
